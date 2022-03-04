@@ -36,10 +36,10 @@ for image in path:
          crop1 = copia_cortada[y:y+h, x:x+w]
          copia_crop = crop1.copy()
 
-         # Função criada para pegar os pixels cinzas do ARTAG e converter para Branco, a fim de facilitar a leitura
+         # Função criada para pegar os pixels cinzas do ARTAG e converter para Branco a fim de facilitar a posterior leitura (Para a leitura do ARTag basta decodificar copia_crop ou crop1)
          copia_crop[np.where((copia_crop==[41,41,41]).all(axis=2))] = [255,255,255] 
 
-         cv2.imshow('Imagem', copia_crop)
+         cv2.imshow('Imagem', copia_crop) # Mostra cada ARTag das imagens
          cv2.waitKey()
          cv2.destroyAllWindows()
    
